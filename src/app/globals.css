@@ -1,5 +1,7 @@
 @import url("../../node_modules/leaflet//dist//leaflet.css");
-
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 body {
   height: 99vh;
   width: 100%;
