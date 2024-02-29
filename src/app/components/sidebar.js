@@ -39,7 +39,7 @@ export default function LeftSideBar({ onGeojsonData }) {
       </button>
       {open === true ? (
         <div className="side-bar">
-          <div className="max-h-full overflow-y-auto sidebar-container">
+          <div className="max-h-full sidebar-container">
             <div className="text-center">
               <label htmlFor="file-upload" className="cursor-pointer">
                 <input
@@ -54,9 +54,14 @@ export default function LeftSideBar({ onGeojsonData }) {
                 <div className="mt-1" style={{ color: "#343434" }}>
                   Upload Shapefile .zip
                 </div>
-                <code>{geojson && JSON.stringify(geojson, null, 2)}</code>
               </label>
             </div>
+                <div className="overflow-y-auto bg-gray-200 p-4 h-auto min-h-[85%] " >
+               <div className="mb-3 text-center " style={{ color: "#343434" }}>
+                  {geojson && "GeoJSON:"}
+                </div>
+                <pre className="mr-1">{geojson && JSON.stringify(geojson, null, 1)}</pre>
+                </div>
           </div>
         </div>
       ) : null}
